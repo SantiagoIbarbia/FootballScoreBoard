@@ -1,0 +1,12 @@
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\bin\Debug\net6.0\FootballScoreBoard.deps.json
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\bin\Debug\net6.0\FootballScoreBoard.dll
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\bin\Debug\net6.0\FootballScoreBoard.pdb
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\obj\Debug\net6.0\FootballScoreBoard.csproj.AssemblyReference.cache
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\obj\Debug\net6.0\FootballScoreBoard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\obj\Debug\net6.0\FootballScoreBoard.AssemblyInfoInputs.cache
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\obj\Debug\net6.0\FootballScoreBoard.AssemblyInfo.cs
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\obj\Debug\net6.0\FootballScoreBoard.csproj.CoreCompileInputs.cache
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\obj\Debug\net6.0\FootballScoreBoard.dll
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\obj\Debug\net6.0\refint\FootballScoreBoard.dll
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\obj\Debug\net6.0\FootballScoreBoard.pdb
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FootballScoreBoard\obj\Debug\net6.0\ref\FootballScoreBoard.dll
