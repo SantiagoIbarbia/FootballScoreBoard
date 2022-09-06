@@ -1,11 +1,7 @@
 ﻿using FootballScoreBoard.Domain.Entities;
 using FootballScoreBoard.Infraescturture.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
+[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("FootballScoreBoard.Tests")]
 namespace FootballScoreBoard.Infraescturture
 {
     internal class FootballBoardRepositoryInMemory : IFootballBoardRepository
@@ -28,6 +24,11 @@ namespace FootballScoreBoard.Infraescturture
         public Task<FootballMatch> Update(string matchId, int homeScore, int awayScore)
         {
             throw new NotImplementedException();
+        }
+
+        public Task<ICollection<FootballMatch>?> GetAll()
+        {
+             return Task.FromResult(_activeMatches?.Values);
         }
     }
 }

@@ -102,3 +102,4 @@ C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoar
 C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FooballScoreBoard.Tests\obj\Debug\net6.0\FooballScoreBoard.Tests.pdb
 C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FooballScoreBoard.Tests\obj\Debug\net6.0\FooballScoreBoard.Tests.genruntimeconfig.cache
 C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FooballScoreBoard.Tests\obj\Debug\net6.0\ref\FooballScoreBoard.Tests.dll
+C:\Users\Santi\OneDrive\Escritorio\Proyectos\FootbalScoreBoard\FootballScoreBoard\FooballScoreBoard.Tests\bin\Debug\net6.0\CoverletSourceRootsMapping
