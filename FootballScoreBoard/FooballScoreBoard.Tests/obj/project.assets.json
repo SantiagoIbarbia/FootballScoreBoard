@@ -1088,6 +1088,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Castle.Core": "5.1.0",
           "Microsoft.Extensions.DependencyInjection": "6.0.0"
         },
         "compile": {

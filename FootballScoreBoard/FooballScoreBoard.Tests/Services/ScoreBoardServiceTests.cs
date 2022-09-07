@@ -5,6 +5,7 @@ using FootballScoreBoard.Infraescturture.Interfaces;
 using FootballScoreBoard.Domain.Entities;
 using FootballScoreBoard.Domain.Exceptions;
 using FootballScoreBoard.Tests.Utilities;
+using System.Text.RegularExpressions;
 
 namespace FooballScoreBoard.Tests
 {
@@ -23,87 +24,91 @@ namespace FooballScoreBoard.Tests
         public async Task StartGame_invalidMatch_OwnException()
         {
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
-            _repo.Setup(o => o.Add(It.IsAny<FootballMatch>())).ThrowsAsync(new SameTeamException());
-            IScoreBoardService inner = new ScoreBoardService(_repo.Object);
+            FootballMatch match = null;
+            _repo.Setup(o => o.Add(It.IsAny<FootballMatch>())).ReturnsAsync(match);
+            IScoreBoardService inner = new ScoreBoardService(_repo.Object, null);
 
             Assert.ThrowsAsync<SameTeamException>(() => inner.StartGame("Boca", "Boca"));
         }
 
         [Test]
-        public async Task StartGame_validMatch_matchReturned()
+        public async Task StartGame_ValidMatch_MatchReturned()
         {
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
             _repo.Setup(o => o.Add(It.IsAny<FootballMatch>())).ReturnsAsync(SINGLE_MATCH);
-            IScoreBoardService inner = new ScoreBoardService(_repo.Object);
-            var game = await inner.StartGame("Boca", "River");
-            Assert.IsTrue(game.CreationTime > DateTime.Now.AddDays(-1));
+            IScoreBoardService inner = new ScoreBoardService(_repo.Object, null);
+            var match = await inner.StartGame("Boca", "River");
+            Assert.IsTrue(match.CreationTime > DateTime.Now.AddDays(-1));
         }
 
         [Test]
-        public async Task FinishGame_invalidMatch_ownException()
+        public async Task FinishGame_InvalidMatch_OwnException()
         {
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
-            _repo.Setup(o => o.Remove(It.IsAny<string>())).ThrowsAsync(new InvalidMatchException());
-            IScoreBoardService inner = new ScoreBoardService(_repo.Object);
+            FootballMatch match = null;
+            _repo.Setup(o => o.Remove(It.IsAny<string>())).ReturnsAsync(match);
+            IScoreBoardService inner = new ScoreBoardService(_repo.Object, null);
 
             Assert.ThrowsAsync<InvalidMatchException>(() => inner.FinishGame("a00223"));
         }
 
         [Test]
-        public async Task FinishGame_validMatch_matchReturned()
+        public async Task FinishGame_ValidMatch_MatchReturned()
         {
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
             _repo.Setup(o => o.Remove(It.IsAny<string>())).ReturnsAsync(SINGLE_MATCH);
-            IScoreBoardService inner = new ScoreBoardService(_repo.Object);
-            FootballMatch game = await inner.FinishGame("example");
-            Assert.IsNotNull(game);
+            IScoreBoardService inner = new ScoreBoardService(_repo.Object, null);
+            FootballMatch match = await inner.FinishGame("example");
+            Assert.IsNotNull(match);
         }
 
         [Test]
-        public async Task UpdateScore_invalidScore_ownException()
+        public async Task UpdateScore_InvalidScore_OwnException()
         {
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
-            _repo.Setup(o => o.Update(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>())).ThrowsAsync(new InvalidScoreException());
-            IScoreBoardService inner = new ScoreBoardService(_repo.Object);
-            Assert.ThrowsAsync<InvalidScoreException>(() => inner.UpdateScore("example", 2, 0));
+            FootballMatch match = null;
+            _repo.Setup(o => o.Update(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(match);
+            IScoreBoardService inner = new ScoreBoardService(_repo.Object, null);
+            Assert.ThrowsAsync<InvalidScoreException>(() => inner.UpdateScore("example", -2, 0));
         }
 
         [Test]
-        public async Task UpdateScore_invalidMatch_ownException()
+        public async Task UpdateScore_InvalidMatch_OwnException()
         {
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
-            _repo.Setup(o => o.Update(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>())).ThrowsAsync(new InvalidMatchException());
-            IScoreBoardService inner = new ScoreBoardService(_repo.Object);
+            FootballMatch match = null;
+            _repo.Setup(o => o.Update(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(match);
+            IScoreBoardService inner = new ScoreBoardService(_repo.Object, null);
             Assert.ThrowsAsync<InvalidMatchException>(() => inner.UpdateScore("example", 2, 0));
         }
         [Test]
-        public async Task UpdateScore_validMatchAndResult_MatchReturned()
+        public async Task UpdateScore_ValidMatchAndResult_MatchReturned()
         {
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
             _repo.Setup(o => o.Update(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(SINGLE_MATCH);
-            IScoreBoardService inner = new ScoreBoardService(_repo.Object);
-            FootballMatch game = await inner.UpdateScore("example", 2, 0);
-            Assert.IsTrue(game?.LocalTeam?.Score == 2);
+            IScoreBoardService inner = new ScoreBoardService(_repo.Object, null);
+            FootballMatch match = await inner.UpdateScore("example", 1, 0);
+            Assert.IsTrue(match?.HomeTeam?.Score == 1);
         }
 
         [Test]
-        public async Task GetSummary_noMatches_noMatchesMessage()
+        public async Task GetSummary_NoMatches_NoMatchesMessage()
         {
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
             _repo.Setup(o => o.GetAll()).ReturnsAsync(new List<FootballMatch>());
-            IScoreBoardService inner = new ScoreBoardService(_repo.Object);
+            IScoreBoardService inner = new ScoreBoardService(_repo.Object, new SummaryMessageService());
             string summary = await inner.GetSummary();
             Assert.IsTrue(summary.StartsWith("No matches found"));
         }
 
         [Test]
-        public async Task GetSummary_validMatches_validOrderedMatchesSummary()
+        public async Task GetSummary_ValidMatches_ValidOrderedMatchesSummary()
         {
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
             _repo.Setup(o => o.GetAll()).ReturnsAsync(UNORDERED_MATCHES);
-            IScoreBoardService inner = new ScoreBoardService(_repo.Object);
+            IScoreBoardService inner = new ScoreBoardService(_repo.Object, new SummaryMessageService());
             string summary = await inner.GetSummary();
-            Assert.IsTrue(summary.StartsWith(""));
+            Assert.IsTrue(summary.StartsWith("1. Uruguay 6 - Italy 6"));
         }
     }
 }

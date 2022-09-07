@@ -1,3 +1,15 @@
 {
-
+  "MatchId": "example",
+  "HomeTeam": {
+    "Name": "EGIPTO",
+    "Logo": "http://cnd.egipto.com/logo.png",
+    "Score": 1
+  },
+  "AwayTeam": {
+    "Name": "AUSTRALIA",
+    "Logo": "http://cnd.australia.com/logo.png",
+    "Score": 0
+  },
+  "CreationTime": "2022-09-07T00:00:00",
+  "UpdateTime": "2022-09-07T00:00:00"
 }

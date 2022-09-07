@@ -1,3 +1,77 @@
-{
-
-}
+[
+  {
+    "MatchId": "example1",
+    "HomeTeam": {
+      "Name": "Mexico",
+      "Logo": "http://cnd.mex.com/logo.png",
+      "Score": 0
+    },
+    "AwayTeam": {
+      "Name": "Canada",
+      "Logo": "http://cnd.canad.com/logo.png",
+      "Score": 5
+    },
+    "CreationTime": "2022-09-07T10:00:00",
+    "UpdateTime": "2022-09-07T10:00:00"
+  },
+  {
+    "MatchId": "example2",
+    "HomeTeam": {
+      "Name": "Spain",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 10
+    },
+    "AwayTeam": {
+      "Name": "Brazil",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 2
+    },
+    "CreationTime": "2022-09-07T12:00:00",
+    "UpdateTime": "2022-09-07T12:00:00"
+  },
+  {
+    "MatchId": "example3",
+    "HomeTeam": {
+      "Name": "Germany",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 2
+    },
+    "AwayTeam": {
+      "Name": "France",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 2
+    },
+    "CreationTime": "2022-09-07T13:00:00",
+    "UpdateTime": "2022-09-07T13:00:00"
+  },
+  {
+    "MatchId": "example4",
+    "HomeTeam": {
+      "Name": "Uruguay",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 6
+    },
+    "AwayTeam": {
+      "Name": "Italy",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 6
+    },
+    "CreationTime": "2022-09-07T15:00:00",
+    "UpdateTime": "2022-09-07T15:00:00"
+  },
+  {
+    "MatchId": "example5",
+    "HomeTeam": {
+      "Name": "Argentina",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 3
+    },
+    "AwayTeam": {
+      "Name": "Australia",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 1
+    },
+    "CreationTime": "2022-09-07T16:00:00",
+    "UpdateTime": "2022-09-07T16:00:00"
+  }
+]
