@@ -5,6 +5,7 @@ using FootballScoreBoard.Infraescturture.Interfaces;
 using FootballScoreBoard.Domain.Entities;
 using FootballScoreBoard.Domain.Exceptions;
 using FootballScoreBoard.Tests.Utilities;
+using System.Text.RegularExpressions;
 
 namespace FooballScoreBoard.Tests
 {
@@ -35,8 +36,8 @@ namespace FooballScoreBoard.Tests
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
             _repo.Setup(o => o.Add(It.IsAny<FootballMatch>())).ReturnsAsync(SINGLE_MATCH);
             IScoreBoardService inner = new ScoreBoardService(_repo.Object);
-            var game = await inner.StartGame("Boca", "River");
-            Assert.IsTrue(game.CreationTime > DateTime.Now.AddDays(-1));
+            var match = await inner.StartGame("Boca", "River");
+            Assert.IsTrue(match.CreationTime > DateTime.Now.AddDays(-1));
         }
 
         [Test]
@@ -55,8 +56,8 @@ namespace FooballScoreBoard.Tests
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
             _repo.Setup(o => o.Remove(It.IsAny<string>())).ReturnsAsync(SINGLE_MATCH);
             IScoreBoardService inner = new ScoreBoardService(_repo.Object);
-            FootballMatch game = await inner.FinishGame("example");
-            Assert.IsNotNull(game);
+            FootballMatch match = await inner.FinishGame("example");
+            Assert.IsNotNull(match);
         }
 
         [Test]
@@ -82,8 +83,8 @@ namespace FooballScoreBoard.Tests
             Mock<IFootballBoardRepository> _repo = new Mock<IFootballBoardRepository>();
             _repo.Setup(o => o.Update(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(SINGLE_MATCH);
             IScoreBoardService inner = new ScoreBoardService(_repo.Object);
-            FootballMatch game = await inner.UpdateScore("example", 2, 0);
-            Assert.IsTrue(game?.LocalTeam?.Score == 2);
+            FootballMatch match = await inner.UpdateScore("example", 2, 0);
+            Assert.IsTrue(match?.LocalTeam?.Score == 2);
         }
 
         [Test]

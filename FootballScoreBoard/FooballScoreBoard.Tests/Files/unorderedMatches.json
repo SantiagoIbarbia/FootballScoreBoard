@@ -1,3 +1,62 @@
-{
-
-}
+[
+  {
+    "MatchId": "example1",
+    "LocalTeam": {
+      "Name": "EGIPTO",
+      "Logo": "http://cnd.egipto.com/logo.png",
+      "Score": 1
+    },
+    "AwayTeam": {
+      "Name": "AUSTRALIA",
+      "Logo": "http://cnd.australia.com/logo.png",
+      "Score": 0
+    },
+    "CreationTime": "2022-09-07T10:00:00",
+    "UpdateTime": "2022-09-07T10:00:00"
+  },
+  {
+    "MatchId": "example2",
+    "LocalTeam": {
+      "Name": "FRANCIA",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 1
+    },
+    "AwayTeam": {
+      "Name": "ESPAÑA",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 4
+    },
+    "CreationTime": "2022-09-07T12:00:00",
+    "UpdateTime": "2022-09-07T12:00:00"
+  },
+  {
+    "MatchId": "example3",
+    "LocalTeam": {
+      "Name": "GALES",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 1
+    },
+    "AwayTeam": {
+      "Name": "QATAR",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 2
+    },
+    "CreationTime": "2022-09-07T08:00:00",
+    "UpdateTime": "2022-09-07T08:00:00"
+  },
+  {
+    "MatchId": "example4",
+    "LocalTeam": {
+      "Name": "URUGUAY",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 1
+    },
+    "AwayTeam": {
+      "Name": "INGLATERRA",
+      "Logo": "http://cnd.com/logo.png",
+      "Score": 0
+    },
+    "CreationTime": "2022-09-07T08:00:00",
+    "UpdateTime": "2022-09-07T08:00:00"
+  }
+]

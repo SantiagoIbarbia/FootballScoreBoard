@@ -3,7 +3,7 @@
 
 namespace FootballScoreBoard.Infraescturture.Interfaces
 {
-    internal interface IFootballBoardRepository
+    internal interface IFootballBoardRepository : IDisposable
     {
         Task<FootballMatch> Add(FootballMatch match);
         Task<FootballMatch> Remove(string matchId);

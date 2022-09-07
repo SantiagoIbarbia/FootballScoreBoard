@@ -4,10 +4,10 @@ using FootballScoreBoard.Infraescturture.Interfaces;
 [assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("FootballScoreBoard.Tests")]
 namespace FootballScoreBoard.Infraescturture
 {
-    internal class FootballBoardRepositoryInMemory : IFootballBoardRepository
+    internal class FootballBoardInMemoryRepository : IFootballBoardRepository
     {
         private IDictionary<string, FootballMatch> _activeMatches;
-        public FootballBoardRepositoryInMemory()
+        public FootballBoardInMemoryRepository()
         {
             _activeMatches = new Dictionary<string, FootballMatch>();
         }
@@ -26,9 +26,14 @@ namespace FootballScoreBoard.Infraescturture
             throw new NotImplementedException();
         }
 
-        public Task<ICollection<FootballMatch>?> GetAll()
+        public Task<ICollection<FootballMatch>> GetAll()
         {
-             return Task.FromResult(_activeMatches?.Values);
+            return Task.FromResult(_activeMatches.Values);
+        }
+
+        public void Dispose()
+        {
+            _activeMatches = new Dictionary<string, FootballMatch>();
         }
     }
 }
