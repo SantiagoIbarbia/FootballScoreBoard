@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballScoreBoard", "FootballScoreBoard\FootballScoreBoard.csproj", "{4630CEE6-5936-4327-BAC3-5D761CFB8849}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FooballScoreBoard.Tests", "FooballScoreBoard.Tests\FooballScoreBoard.Tests.csproj", "{79011BA0-5592-4AE0-AEAB-EFEE60364D38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballScoreBoard.Tests", "FooballScoreBoard.Tests\FootballScoreBoard.Tests.csproj", "{79011BA0-5592-4AE0-AEAB-EFEE60364D38}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{22A36974-FC42-47EB-B90D-83DE979885A2}"
 	ProjectSection(SolutionItems) = preProject

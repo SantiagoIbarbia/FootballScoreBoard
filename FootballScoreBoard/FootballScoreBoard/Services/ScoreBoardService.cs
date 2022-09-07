@@ -1,7 +1,7 @@
 ﻿using FootballScoreBoard.Domain.Entities;
 using FootballScoreBoard.Infraescturture.Interfaces;
 using FootballScoreBoard.Services.Interfaces;
-
+[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("FootballScoreBoard.Tests")]
 namespace FootballScoreBoard.Services
 {
     internal class ScoreBoardService : IScoreBoardService
