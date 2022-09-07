@@ -45,6 +45,7 @@ namespace FootballScoreBoard.Infraescturture
             {
                 match.HomeTeam.Score = homeScore;
                 match.AwayTeam.Score = awayScore;
+                match.UpdateTime = DateTime.Now;
             }
 
             return Task.FromResult(match);

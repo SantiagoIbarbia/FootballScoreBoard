@@ -4,9 +4,8 @@ using FootballScoreBoard.Domain.Exceptions;
 using FootballScoreBoard.Infraescturture.Interfaces;
 using FootballScoreBoard.Services.Interfaces;
 using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
 
-[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("FootballScoreBoard.Tests")]
+[assembly: InternalsVisibleToAttribute("FootballScoreBoard.Tests")]
 [assembly: InternalsVisibleTo(InternalsVisible.ToDynamicProxyGenAssembly2)]
 namespace FootballScoreBoard.Services
 {
@@ -61,7 +60,7 @@ namespace FootballScoreBoard.Services
         {
             var matches = await _futBoardRepository.GetAll();
 
-            return _messageService.GetSummary(matches.OrderByDescending(o => o.TotalScore).ThenByDescending(o => o.CreationTime));
+            return _messageService.GetSummary(matches?.OrderByDescending(o => o.TotalScore)?.ThenByDescending(o => o.CreationTime));
         }
     }
 }
