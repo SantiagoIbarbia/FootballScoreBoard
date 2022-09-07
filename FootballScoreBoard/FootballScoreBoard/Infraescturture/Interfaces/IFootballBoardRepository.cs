@@ -1,6 +1,9 @@
-﻿using FootballScoreBoard.Domain.Entities;
-[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("FootballScoreBoard.Tests")]
+﻿using Castle.Core.Internal;
+using FootballScoreBoard.Domain.Entities;
+using System.Runtime.CompilerServices;
 
+[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("FootballScoreBoard.Tests")]
+[assembly: InternalsVisibleTo(InternalsVisible.ToDynamicProxyGenAssembly2)]
 namespace FootballScoreBoard.Infraescturture.Interfaces
 {
     internal interface IFootballBoardRepository : IDisposable

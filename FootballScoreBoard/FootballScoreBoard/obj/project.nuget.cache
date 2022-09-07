@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "OMKmoOs1GNKpimlgZqdNwUDWnTK0K72m147K5i7WnArflET8r/rICD9cieVH09HiIWB2dLZhIPAPM9sqUbsLsQ==",
+  "dgSpecHash": "IhD2XAn28AxQae3SvBPaJ0t4Hwqj5H2NQ6mdEV0ZgaumTPS1rEoP5hfvDOsSKNocXwY26Lgxb7hi+P5pxDcjMg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Santi\\OneDrive\\Escritorio\\Proyectos\\FootbalScoreBoard\\FootballScoreBoard\\FootballScoreBoard\\FootballScoreBoard.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Santi\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Santi\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []

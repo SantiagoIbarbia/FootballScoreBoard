@@ -66,22 +66,23 @@ namespace FooballScoreBoard.Tests.Infraestructure
         public async Task Update_ValidMatch_Updated()
         {
             FootballBoardInMemoryRepository inner = new FootballBoardInMemoryRepository();
-            var match = await inner.Add(SINGLE_MATCH);
+            var match = (await inner.Add(SINGLE_MATCH));
+            int matchScore = match.TotalScore;
             var matchUpdated = await inner.Update("example", 1, 1);
-            Assert.IsTrue(matchUpdated.TotalScore > match.TotalScore);
+            Assert.IsTrue(matchUpdated.TotalScore > matchScore);
         }
 
         [Test]
         public async Task GetAll()
         {
             FootballBoardInMemoryRepository inner = new FootballBoardInMemoryRepository();
-            foreach(var match in UNORDERED_MATCHES)
+            foreach (var match in UNORDERED_MATCHES)
             {
-                await inner.Add(SINGLE_MATCH);
+                await inner.Add(match);
             }
             var matches = await inner.GetAll();
             Assert.IsTrue(matches.Any());
-            Assert.IsTrue(matches.Count == 4);
+            Assert.IsTrue(matches.Count == 5);
         }
     }
 }

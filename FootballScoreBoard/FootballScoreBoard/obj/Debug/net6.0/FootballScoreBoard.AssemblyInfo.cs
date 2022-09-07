@@ -12,6 +12,7 @@ using System;
 using System.Reflection;
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("FootballScoreBoard.Tests")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("DynamicProxyGenAssembly2")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("FootballScoreBoard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

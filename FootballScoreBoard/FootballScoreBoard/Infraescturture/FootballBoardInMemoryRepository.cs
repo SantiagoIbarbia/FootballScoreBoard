@@ -1,7 +1,10 @@
-﻿using FootballScoreBoard.Domain.Entities;
+﻿using Castle.Core.Internal;
+using FootballScoreBoard.Domain.Entities;
 using FootballScoreBoard.Infraescturture.Interfaces;
+using System.Runtime.CompilerServices;
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("FootballScoreBoard.Tests")]
+[assembly: InternalsVisibleTo(InternalsVisible.ToDynamicProxyGenAssembly2)]
 namespace FootballScoreBoard.Infraescturture
 {
     internal class FootballBoardInMemoryRepository : IFootballBoardRepository
@@ -13,17 +16,38 @@ namespace FootballScoreBoard.Infraescturture
         }
         public Task<FootballMatch> Add(FootballMatch match)
         {
-            throw new NotImplementedException();
+            FootballMatch added;
+            if (_activeMatches.ContainsKey(match?.MatchId))
+            {
+                added = _activeMatches[match.MatchId];
+            }
+            else
+            {
+                _activeMatches.Add(match.MatchId, match);
+                added = match;
+            }
+            return Task.FromResult(added);
         }
 
         public Task<FootballMatch> Remove(string matchId)
         {
-            throw new NotImplementedException();
+            if (_activeMatches.TryGetValue(matchId, out FootballMatch removed))
+            {
+                _activeMatches.Remove(matchId);
+            }
+
+            return Task.FromResult(removed);
         }
 
         public Task<FootballMatch> Update(string matchId, int homeScore, int awayScore)
         {
-            throw new NotImplementedException();
+            if (_activeMatches.TryGetValue(matchId, out FootballMatch match))
+            {
+                match.HomeTeam.Score = homeScore;
+                match.AwayTeam.Score = awayScore;
+            }
+
+            return Task.FromResult(match);
         }
 
         public Task<ICollection<FootballMatch>> GetAll()
